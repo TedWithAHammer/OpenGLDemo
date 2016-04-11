@@ -1,4 +1,4 @@
-package com.leo.opengldemo.glrender;
+package com.leo.opengldemo.glrenderer;
 
 import android.opengl.GLSurfaceView;
 
