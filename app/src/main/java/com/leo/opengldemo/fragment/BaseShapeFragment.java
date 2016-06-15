@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 /**
  * Created by Leo on 2016/4/11.
  */
-public abstract class BaseShapeFrg extends Fragment {
+public abstract class BaseShapeFragment extends Fragment {
 
     public View getRootView() {
         return rootView;
@@ -30,9 +30,21 @@ public abstract class BaseShapeFrg extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(inflateContentView(), null);
+        if (inflateRootView() != null) {
+            rootView = inflateRootView();
+        } else {
+            rootView = inflater.inflate(inflateRootViewById(), null);
+        }
+        initData();
+        initView(rootView);
         return rootView;
     }
 
-    abstract int inflateContentView();
+    abstract int inflateRootViewById();
+
+    abstract void initData();
+
+    abstract void initView(View v);
+
+    abstract View inflateRootView();
 }

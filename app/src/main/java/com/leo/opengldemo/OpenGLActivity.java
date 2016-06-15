@@ -4,9 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 
-import com.leo.opengldemo.fragment.TriangleFrg;
+import com.leo.opengldemo.fragment.TriangleFragment;
 
-public class OpenGLAct extends AppCompatActivity {
+public class OpenGLActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,6 @@ public class OpenGLAct extends AppCompatActivity {
     }
 
     private void inflateFragment() {
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment, TriangleFrg.newInstance(null)).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment, TriangleFragment.newInstance(null)).commit();
     }
 }
